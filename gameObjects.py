@@ -20,4 +20,3 @@ class Player(pygame.sprite.Sprite):
         self.image_index = 0
         self.is_hit = False
 
-        
