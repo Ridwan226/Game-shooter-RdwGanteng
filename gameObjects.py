@@ -11,12 +11,25 @@ class Player(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         self.image = []
         for i in range(len(player_rect)):
-            self.image.append(plane_img.subsurface(player_rect(i)).convert_alpha())
-
+            self.image.append(plane_img.subsurface(player_rect[i]).convert_alpha())
         self.rect = player_rect[0]
         self.rect.topleft = init_pos
-        self.speed = 8
+        self.speed = 12
         self.bullets = pygame.sprite.Group()
         self.image_index = 0
         self.is_hit = False
+
+    def moveLeft(self):
+        if self.rect.left <= 0:
+            self.rect.left = 0
+
+        else:
+            self.rect.left -= self.speed
+
+    def moveRight(self):
+        if self.rect.left >= SCREEN_WIDTH - self.rect.width:
+            self.rect.left = SCREEN_WIDTH - self.rect.width
+
+        else:
+            self.rect.left += self.speed
 
