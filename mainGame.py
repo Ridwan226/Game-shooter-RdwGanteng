@@ -57,6 +57,12 @@ while running:
             if key_pressed[K_d] or key_pressed[K_RIGHT]:
                 player.moveRight()
 
+            if key_pressed[K_w] or key_pressed[K_UP]:
+                player.moveUp()
+
+            if key_pressed[K_s] or key_pressed[K_DOWN]:
+                player.moveDown()
+
 while 1:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:

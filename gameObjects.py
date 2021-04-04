@@ -19,6 +19,19 @@ class Player(pygame.sprite.Sprite):
         self.image_index = 0
         self.is_hit = False
 
+    def moveUp(self):
+        if self.rect.top <= 0:
+            self.rect.top = 0
+        else:
+            self.rect.top -= self.speed
+
+    def moveDown(self):
+        if self.rect.top >= SCREEN_HEIGHT - self.rect.height:
+            self.rect.top = SCREEN_HEIGHT - self.rect.height
+
+        else:
+            self.rect.top += self.speed
+
     def moveLeft(self):
         if self.rect.left <= 0:
             self.rect.left = 0
